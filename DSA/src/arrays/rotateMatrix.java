@@ -9,12 +9,16 @@ public class rotateMatrix {
         
     }
     public static void rotateMatrix(int[][] matrix){
-        // transpose an array 
+        // transpose a matrix
         for(int i = 0; i < matrix.length; i++){
             for (int j = i + 1; j < matrix[i].length; j++){
                 swap(matrix, i, j);
 
             }
+        }
+        // reverse each row
+        for(int i = 0; i < matrix.length; i ++){
+            reverse(matrix, matrix[i]);
         }
         printMatrix(matrix);
 
@@ -26,15 +30,23 @@ public class rotateMatrix {
         matrix[j][i] = temp;
     }
 
+    public static void reverse(int[][] matrix, int[] row){
+        int left = 0;
+        int right = row.length - 1;
+        while(left < right){
+            int temp = row[left];
+            row[left] = row[right];
+            row[right] = temp;
+            left++;
+            right--;
+        }
+    }
+
     public static void printMatrix(int[][] matrix) {
-        // Iterate through each row
         for (int i = 0; i < matrix.length; i++) {
-            // Iterate through each column in the current row
             for (int j = 0; j < matrix[i].length; j++) {
-                // Print the element at the current position
                 System.out.print(matrix[i][j] + " ");
             }
-            // Move to the next line after printing each row
             System.out.println();
         }
     }
