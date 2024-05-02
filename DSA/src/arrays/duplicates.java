@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class ArraysProblems {
+public class duplicates {
 //     Best Score
 // Given an array, write a function to get first, second best scores from the array and return it in new array.
 
