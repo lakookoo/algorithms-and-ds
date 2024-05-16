@@ -9,7 +9,7 @@ import java.util.ArrayList;
 // Print a location of each permutation 
 public class permutations {
     public static void main(String[] args) {
-        List<Integer> result = getPermutations("absdd", "absmdjkfjdabsddlklbadssdcabs");
+        List<Integer> result = getPermutations("absdd", "absmdjkfjdabsddlklbadssdbadcabs");
         if (!result.isEmpty()) {
             System.out.println("Permutations found at indices: " + result);
         } else {
