@@ -13,6 +13,7 @@ public class elementsInCommon {
         int[] arr2 = { 3, 4, 5, 6 };
 
         System.out.println("Elements in common " + findElementsInCommon(arr1, arr2));
+        System.out.println("Elements in common " + findElementsInCommon2(arr1, arr2));
     }
 
     /**
@@ -35,5 +36,20 @@ public class elementsInCommon {
         System.out.println("Intersection: " + set1); // Output: Intersection: [3, 4]
         int number = set1.size();
         return number;
+    }
+
+    public static int findElementsInCommon2(int[] arr1, int[] arr2){
+        int count = 0;
+        Set<Integer> set1 = new HashSet<>();
+        for (int num : arr1) {
+            set1.add(num);
+        }
+
+        for( int el : arr2){
+            if(set1.contains(el)){
+                count++;
+            }
+        }
+        return count;
     }
 }
